@@ -1,50 +1,106 @@
-# Real-Time OS Security Event Logger <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" align="right">
+# Real-Time OS Security Event Logger 🔒
 
-<p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
-  <img src="https://img.shields.io/badge/version-1.0.0-green" alt="Version">
-  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20MacOS-lightgrey" alt="Platform">
-</p>
+![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?logo=openjdk&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 
-<div align="center">
-  <img src="https://github.com/yourusername/RealTimeOSSecurityEventLogger/raw/main/screenshots/demo.gif" width="600" alt="Application Demo">
-</div>
+![Demo](https://github.com/yourusername/RealTimeOSSecurityEventLogger/raw/main/screenshots/demo.gif)
 
-## 🚀 Features
-<table>
-  <tr>
-    <td><strong>Real-Time Monitoring</strong></td>
-    <td>▹</td>
-    <td>Track file events in directory/subdirectories</td>
-  </tr>
-  <tr>
-    <td><strong>Event Logging</strong></td>
-    <td>▹</td>
-    <td>Timestamped logs in security_events.log</td>
-  </tr>
-  <tr>
-    <td><strong>GUI Interface</strong></td>
-    <td>▹</td>
-    <td>Swing-based real-time display</td>
-  </tr>
-</table>
+A real-time directory monitoring system that logs file creation/deletion events with timestamps and displays them in a GUI.
 
-## 📦 Installation
+## ✨ Features
+- ✅ **Real-Time File Monitoring** using Java WatchService API
+- 📝 **Automatic Logging** to `security_events.log`
+- 🖥️ **Swing GUI** for live event tracking
+- ⏱️ Timestamped events (ISO 8601 format)
+- 🔄 Recursive subdirectory monitoring
+
+## 🚀 Getting Started
+
+### Prerequisites
+- JDK 17 or later
+- Git (optional)
+
+### Installation
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/yourusername/RealTimeOSSecurityEventLogger.git
 
-# Navigate to directory
+# Navigate to project directory
 cd RealTimeOSSecurityEventLogger
 
-# Compile source
+# Compile the source
 javac RealTimeOSSecurityEventLogger.java
 ```
 
-## 🖥️ Usage
-
+### Usage
+```bash
+# Run the application (defaults to current directory)
 java RealTimeOSSecurityEventLogger
+```
 
-<div class="highlight"> <strong>Pro Tip:</strong> Modify these lines to customize: ```java // In RealTimeOSSecurityEventLogger.java startDirectoryMonitor(Paths.get(".")); // ← Change monitored directory private static final String LOG_FILE = "security_events.log"; // ← Custom log path ``` </div>
+**Custom Configuration**:
+```java
+// In RealTimeOSSecurityEventLogger.java
 
-<div class="highlight"> <strong>Pro Tip:</strong> Modify these lines to customize: ```java // In RealTimeOSSecurityEventLogger.java startDirectoryMonitor(Paths.get(".")); // ← Change monitored directory private static final String LOG_FILE = "security_events.log"; // ← Custom log path ``` </div>
+// Change monitored directory (line 15)
+startDirectoryMonitor(Paths.get("/path/to/directory"));
+
+// Change log file location (line 12)
+private static final String LOG_FILE = "/custom/path/security_events.log";
+```
+
+## 📊 Configuration Overview
+| Setting              | Default Value          | Customization Point           |
+|----------------------|------------------------|--------------------------------|
+| Monitored Directory  | Current Directory (.)  | `startDirectoryMonitor()` call |
+| Log File Path        | security_events.log    | `LOG_FILE` constant            |
+| Event Types Tracked  | CREATE, DELETE         | `StandardWatchEventKinds` enum |
+
+## 🛠️ Troubleshooting
+
+<details>
+<summary><b>Common Issues</b></summary>
+
+1. **No Events Detected**
+   - Verify directory permissions
+   - Check anti-virus/firewall settings
+   - Ensure files aren't system/hidden
+
+2. **Log File Not Created**
+   - Check write permissions
+   - Verify disk space
+   - Ensure path is valid
+
+3. **GUI Not Updating**
+   - Confirm Swing dependencies
+   - Check EDT thread status
+</details>
+
+## 🤝 Contributing
+
+1. Fork the Project
+2. Create your Feature Branch  
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your Changes  
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push to the Branch  
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. Open a Pull Request
+
+## 📜 License
+Distributed under MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+Made with ❤️ by Bhragu Tripathi
+
+📚 **Documentation**:  
+[Java WatchService Docs](https://docs.oracle.com/javase/8/docs/api/java/nio/file/WatchService.html) | 
+[Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/)
