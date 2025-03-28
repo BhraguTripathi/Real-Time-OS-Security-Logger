@@ -14,29 +14,20 @@ Java Development Kit (JDK): Ensure that JDK 8 or higher is installed on your sys
 Installation
 Clone the Repository:
 
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/RealTimeOSSecurityEventLogger.git
+
 Navigate to the Project Directory:
 
-bash
-Copy
-Edit
 cd RealTimeOSSecurityEventLogger
+
 Compile the Source Code:
 
-bash
-Copy
-Edit
 javac RealTimeOSSecurityEventLogger.java
+
 Usage
 Run the Application:
-
-bash
-Copy
-Edit
 java RealTimeOSSecurityEventLogger
+
 Monitor Directory: By default, the application monitors the current directory ("."). To monitor a different directory, modify the startDirectoryMonitor method in the source code to specify the desired path.
 
 View Logged Events:
