@@ -39,8 +39,9 @@ cd RealTimeOSSecurityEventLogger
 
 # Compile source
 javac RealTimeOSSecurityEventLogger.java
+```
 
-🖥️ Usage
+## 🖥️ Usage
 
 java RealTimeOSSecurityEventLogger
 
